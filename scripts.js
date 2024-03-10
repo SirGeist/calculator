@@ -15,3 +15,14 @@ let calc = (num1, num2, operator) => {
 };
 
 const calcContainer = document.querySelector(".container");
+const fragment = document.createDocumentFragment();
+for (let i = 0; i < 20; i++) {
+  const btn = document.createElement("button");
+  btn.setAttribute(
+    "style",
+    "display: flex; justify-content: space-between; height: 20px; align-items: center; padding: 20px;"
+  );
+  fragment.appendChild(btn);
+}
+
+calcContainer.appendChild(fragment);
