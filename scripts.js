@@ -14,25 +14,49 @@ let calc = (num1, num2, operator) => {
   }
 };
 
+// Creating an array of symbols to iterate over later
+const buttonLabels = [
+  "CE",
+  "C",
+  "+/-",
+  "÷",
+  "7",
+  "8",
+  "9",
+  "X",
+  "4",
+  "5",
+  "6",
+  "-",
+  "1",
+  "2",
+  "3",
+  "+",
+  "0",
+  ".",
+  "=",
+];
+
+// Main container
 const calcContainer = document.querySelector(".btn-container");
 const fragment = document.createDocumentFragment();
-for (let i = 0; i < 19; i++) {
+
+// Iterating through each label
+for (let label of buttonLabels) {
   const btn = document.createElement("button");
   btn.setAttribute(
     "style",
-    "display: flex; justify-content: center; align-items: center; padding: 40px;"
+    "display: flex; justify-content: center; align-items: center; padding: 30px; border-radius: 15px; border-color: #343434; border-width: 5px"
   );
-  btn.textContent = i;
+  btn.textContent = label;
 
-  // Last button is supposed to be the equal sign
-  if (i === 18) {
-    btn.textContent = "=";
-    btn.style.width = "calc(50% - 20px)";
-    btn.style.height = "calc(20% - 10px)";
-    btn.style.marginLeft = "5px";
-    btn.setAttribute("colspan", "2");
-  }
   fragment.appendChild(btn);
 }
+
+// Styling the equals button
+const equalsButton = fragment.querySelector("button:nth-child(19)");
+equalsButton.style.width = "calc(50% - 20px)";
+equalsButton.style.height = "calc(20% - 10px)";
+equalsButton.style.marginLeft = "5px";
 
 calcContainer.appendChild(fragment);
