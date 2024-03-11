@@ -14,7 +14,7 @@ let calc = (num1, num2, operator) => {
   }
 };
 
-const calcContainer = document.querySelector(".container");
+const calcContainer = document.querySelector(".btn-container");
 const fragment = document.createDocumentFragment();
 for (let i = 0; i < 20; i++) {
   const btn = document.createElement("button");

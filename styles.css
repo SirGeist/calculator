@@ -7,15 +7,31 @@ body {
   height: 100vh;
 }
 
-.container {
+.display {
+  width: calc(100% - 40px);
+  height: 40px;
+  font-size: 20px;
+  text-align: right;
+  border: none;
+  border-radius: 5px;
+  padding: 5px;
+  margin-left: 15px;
+  margin-bottom: 10px;
+}
+
+.btn-container {
   width: 500px;
-  height: 500px;
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
   background-color: gray;
   border: 2px solid black;
-
   border-radius: 10px;
-  padding: 40px;
-  align-content: center;
-  justify-content: center;
+  padding: 20px;
+}
+
+button {
+  width: calc(25% - 20px);
+  height: calc(20% - 20px);
+  margin-bottom: 20px;
 }
