@@ -44,11 +44,11 @@ const fragment = document.createDocumentFragment();
 // Iterating through each label
 for (let label of buttonLabels) {
   const btn = document.createElement("button");
+  btn.textContent = label;
   btn.setAttribute(
     "style",
-    "display: flex; justify-content: center; align-items: center; padding: 30px; border-radius: 15px; border-color: #343434; border-width: 5px"
+    "display: flex; justify-content: center; align-items: center; padding: 20px; border-radius: 15px; border-color: #343434; border-width: 5px; font-size: 30px; font-weight: bold"
   );
-  btn.textContent = label;
 
   fragment.appendChild(btn);
 }
