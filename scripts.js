@@ -1,8 +1,16 @@
 // Functions to add, subtract, multiply, and divide
-let getNum1 = 0;
-let getNum2 = 0;
+let getNum1 = "0";
+let getNum2 = "0";
 let getOperator = "";
 let result = "";
+
+const display = document.querySelector(".display");
+
+const updateDisplay = () => {
+  display.textContent =
+    parseFloat(getNum2) || parseFloat(getNum1) || parseFloat("0"); // Display getNum2 if available, then getNum1, or 0
+};
+
 let calc = (num1, num2, operator) => {
   num1 = parseFloat(num1);
   num2 = parseFloat(num2);
@@ -47,9 +55,17 @@ const handleButtonClick = (btnText) => {
   if (!isNaN(parseFloat(btnText))) {
     // If the button text is a number
     if (getOperator) {
-      getNum2 += btnText;
+      if (getNum2 === 0) {
+        getNum2 = btnText; // Replace "0" with the new number
+      } else {
+        getNum2 += btnText; // Append the new number
+      }
     } else {
-      getNum1 += btnText;
+      if (getNum1 === 0) {
+        getNum1 = btnText; // Replace "0" with the new number
+      } else {
+        getNum1 += btnText; // Append the new number
+      }
     }
   } else if (btnText === ".") {
     // Handling decimal point
@@ -109,5 +125,5 @@ const equalsButton = fragment.querySelector("button:nth-child(19)");
 equalsButton.style.width = "calc(50% - 20px)";
 equalsButton.style.height = "calc(20% - 10px)";
 equalsButton.style.marginLeft = "5px";
-
+updateDisplay();
 calcContainer.appendChild(fragment);
