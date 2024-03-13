@@ -148,6 +148,17 @@ for (let label of buttonLabels) {
     "display: flex; justify-content: center; align-items: center; padding: 20px; border-radius: 15px; border-color: #343434; border-width: 5px; font-size: 30px; font-weight: bold"
   );
 
+  if (!isNaN(parseFloat(label)) || label === ".") {
+    // Apply color styles for numbers and decimal point button
+    btn.style.backgroundColor = "white"; // Blue color
+  } else if (["+", "-", "x", "÷", "="].includes(label)) {
+    // Apply color styles for mathematical operation buttons
+    btn.style.backgroundColor = "#ffcc00"; // Yellow color
+  } else {
+    // Applying colors for the rest
+    btn.style.backgroundColor = "lightblue";
+  }
+
   btn.addEventListener("click", () => {
     handleButtonClick(btn.textContent);
   });
