@@ -33,7 +33,7 @@ let calc = (num1, num2, operator) => {
     case "-":
       total = num1 - num2;
       break;
-    case "X":
+    case "x":
       total = num1 * num2;
       break;
     case "÷":
@@ -55,7 +55,7 @@ const buttonLabels = [
   "7",
   "8",
   "9",
-  "X",
+  "x",
   "4",
   "5",
   "6",
@@ -91,7 +91,7 @@ const handleButtonClick = (btnText) => {
     } else if (!getOperator && !getNum1.includes(".")) {
       getNum1 += btnText;
     }
-  } else if (["+", "-", "X", "÷"].includes(btnText)) {
+  } else if (["+", "-", "x", "÷"].includes(btnText)) {
     // If we have num1 but no operator, assign that operator
     if (getNum1 && !getOperator) {
       getOperator = btnText;
